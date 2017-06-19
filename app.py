@@ -49,7 +49,7 @@ def deleteMenuItem(restaurant_id, menu_id):
 # ############ Menu endpoints end        ############
 
 
-# ############ API endpoints end         ############
+# ############ API endpoints start       ############
 @app.route('/restaurants/JSON/')
 def getAllRestaurants():
     return "Get all restaurants JSON."
@@ -63,7 +63,7 @@ def getAllMenuItems(restaurant_id):
 @app.route('/restaurant/<int:restaurant_id>/menu/<int:menu_id>/JSON/')
 def getAllItemsOfMenu(restaurant_id, menu_id):
     return "Get all fields in a menu item."
-# ############ API endpoints start       ############
+# ############ API endpoints end         ############
 
 
 if __name__ == '__main__':
