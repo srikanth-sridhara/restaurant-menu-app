@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title>Restaurant Menu App</title>
+</head>
+<body>
+    <h1><a href="{{url_for('indexRestaurant')}}">Restaurant Menu App</a></h1>
+    <h3><u>{{restaurant.name}} Menu</u></h3>
+    {% if not items %}
+        <p>There are currently no menu items added.</p>
+    {% endif %}
+    {% for item in items %}
+        <h4>{{item.id}}. {{item.name}}</h4>
+        <p>
+            Description: {{item.description}}<br />
+            Price: {{item.price}}<br />
+            Course: {{item.course}}<br />
+            <a href="{{url_for('editMenuItem', restaurant_id=restaurant.id, menu_id=item.id)}}">Edit</a><br />
+            <a href="{{url_for('deleteMenuItem', restaurant_id=restaurant.id, menu_id=item.id)}}">Delete</a><br />
+        </p>
+    {% endfor %}
+
+    <a href="{{url_for('addNewMenuItem', restaurant_id=restaurant.id)}}">Add a new Item</a>
+</body>
+</html>

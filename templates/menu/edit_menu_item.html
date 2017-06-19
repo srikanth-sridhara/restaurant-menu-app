@@ -1,0 +1,18 @@
+<html>
+<head>
+    <title>Restaurant Menu App</title>
+</head>
+<body>
+    <h1><a href="{{url_for('indexRestaurant')}}">Restaurant Menu App</a></h1>
+    <h3><u>Edit Menu Item</u></h3>
+    <form action="{{url_for('editMenuItem', restaurant_id=restaurant_id, menu_id=item.id)}}" method="POST">
+        <p>
+            Name: <input type="text" size="30" name="itemname" placeholder="{{item.name}}"><br />
+            Description: <input type="text" size="30" name="itemdescription" placeholder="{{item.description}}"><br />
+            Price in $: <input type="text" size="30" name="itemprice" placeholder="{{item.price}}"><br />
+            Course: <input type="text" size="30" name="itemcourse" placeholder="{{item.course}}"><br />
+        </p>
+        <input type="submit" value="Change">
+    </form>
+</body>
+</html>

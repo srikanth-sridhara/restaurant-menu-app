@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>Restaurant Menu App</title>
+</head>
+<body>
+    <h1><a href="{{url_for('indexRestaurant')}}">Restaurant Menu App</a></h1>
+    <h3><u>Restaurants</u></h3>
+    {% if not restaurants %}
+        <p>There are currently no restaurants added.</p>
+    {% endif %}
+    {% for restaurant in restaurants %}
+        <p>
+            <a href="{{url_for('indexMenu', restaurant_id=restaurant.id)}}">{{restaurant.id}}. {{restaurant.name}} </a><br />
+            <a href="{{url_for('editRestaurant', restaurant_id=restaurant.id)}}">Edit</a><br />
+            <a href="{{url_for('deleteRestaurant', restaurant_id=restaurant.id)}}">Delete</a>
+        </p>
+    {% endfor %}
+
+    <a href="{{url_for('addNewRestaurant')}}">Add a new Restaurant</a>
+</body>
+</html>

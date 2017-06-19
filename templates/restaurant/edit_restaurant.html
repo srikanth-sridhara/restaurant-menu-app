@@ -1,0 +1,15 @@
+<html>
+<head>
+    <title>Restaurant Menu App</title>
+</head>
+<body>
+    <h1><a href="{{url_for('indexRestaurant')}}">Restaurant Menu App</a></h1>
+    <h3><u>Edit a Restaurant</u></h3>
+    <form action="{{url_for('editRestaurant', restaurant_id=restaurant_id)}}" method="POST">
+        <p>
+            Name: <input type="text" size="30" name="restaurantname" placeholder="{{restaurant.name}}">
+            <input type="submit" value="Change">
+        </p>
+    </form>
+</body>
+</html>
