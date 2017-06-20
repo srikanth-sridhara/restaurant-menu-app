@@ -7,10 +7,10 @@
     <h3><u>Edit Menu Item</u></h3>
     <form action="{{url_for('editMenuItem', restaurant_id=restaurant_id, menu_id=item.id)}}" method="POST">
         <p>
-            Name: <input type="text" size="30" name="itemname" placeholder="{{item.name}}"><br />
-            Description: <input type="text" size="30" name="itemdescription" placeholder="{{item.description}}"><br />
-            Price in $: <input type="text" size="30" name="itemprice" placeholder="{{item.price}}"><br />
-            Course: <input type="text" size="30" name="itemcourse" placeholder="{{item.course}}"><br />
+            Name: <input type="text" size="30" name="itemname" value="{{item.name}}"><br />
+            Description: <input type="text" size="30" name="itemdescription" value="{{item.description}}"><br />
+            Price in $: <input type="text" size="30" name="itemprice" value="{{item.price}}"><br />
+            Course: <input type="text" size="30" name="itemcourse" value="{{item.course}}"><br />
         </p>
         <input type="submit" value="Change">
     </form>

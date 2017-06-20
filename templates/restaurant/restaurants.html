@@ -5,6 +5,17 @@
 <body>
     <h1><a href="{{url_for('indexRestaurant')}}">Restaurant Menu App</a></h1>
     <h3><u>Restaurants</u></h3>
+    <!-- Flash messages -->
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+            {% for message in messages %}
+                <li><strong> {{message}} </strong></li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    
     {% if not restaurants %}
         <p>There are currently no restaurants added.</p>
     {% endif %}
